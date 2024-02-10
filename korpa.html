@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="korpa.css">
+    
+</head>
+<body>
+<header>
+    <div class="timer">
+        <span id="days">18 Dana </span>
+        <span id="hours">23 sati </span>
+        <span id="minutes">51 minuta </span>
+        <span id="seconds">8 sekunda </span>
+    </div>
+
+    <script>
+        var endDate = new Date("Feb 15, 2024 16:00:00");
+        var countDowntimer = setInterval(function() {
+            var now = new Date().getTime();
+            var preostalo = endDate - now;
+
+            const sekunda = 1000;
+            const minut = sekunda * 60;
+            const sat = minut * 60;
+            const dan = sat * 24;
+
+            var preostaloDana = Math.trunc(preostalo / dan);
+            var preostaloSati = Math.trunc((preostalo % dan) / sat);
+            var preostaloMinuta = Math.trunc((preostalo % sat) / minut);
+            var preostaloSekundi = Math.trunc((preostalo % minut) / sekunda);
+
+            document.getElementById("days").innerHTML = preostaloDana + " Dana ";
+            document.getElementById("hours").innerHTML = preostaloSati + " sati ";
+            document.getElementById("minutes").innerHTML = preostaloMinuta + " minuta ";
+            document.getElementById("seconds").innerHTML = preostaloSekundi + " sekunda ";
+
+            if (preostalo <= 0) {
+                clearInterval(countDowntimer);
+                document.write("Isteklo je vreme");
+            }
+        }, 1000);
+    </script>
+<h1>DO NOVE KOLEKCIJE</h1>
+</header>
+<div><img src="pngtree-simple-shopping-bag-icon-vector-pack-gift-online-vector-png-image_12591864.png" alt="los internet"><p>nemate nista u korpi nastavite da kupujete <a href="index.html">ovde</a></p></div>
+<footer>Stanje odece traje do 29. januara ili do isteka zaliha</footer>
+            <footer>Sva prava zadrzana "primer"©</footer>
+    
+</body>

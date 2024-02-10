@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+<header>
+    <div>
+        <span id="days">18 Dana </span>
+        <span id="hours">23 sati </span>
+        <span id="minutes">51 minuta </span>
+        <span id="seconds">8 sekunda </span>
+    </div>
+
+    <script>
+        var endDate = new Date("Feb 15, 2024 16:00:00");
+        var countDowntimer = setInterval(function() {
+            var now = new Date().getTime();
+            var preostalo = endDate - now;
+
+            const sekunda = 1000;
+            const minut = sekunda * 60;
+            const sat = minut * 60;
+            const dan = sat * 24;
+
+            var preostaloDana = Math.trunc(preostalo / dan);
+            var preostaloSati = Math.trunc((preostalo % dan) / sat);
+            var preostaloMinuta = Math.trunc((preostalo % sat) / minut);
+            var preostaloSekundi = Math.trunc((preostalo % minut) / sekunda);
+
+            document.getElementById("days").innerHTML = preostaloDana + " Dana ";
+            document.getElementById("hours").innerHTML = preostaloSati + " sati ";
+            document.getElementById("minutes").innerHTML = preostaloMinuta + " minuta ";
+            document.getElementById("seconds").innerHTML = preostaloSekundi + " sekunda ";
+
+            if (preostalo <= 0) {
+                clearInterval(countDowntimer);
+                document.write("Isteklo je vreme");
+            }
+        }, 1000);
+    </script>
+<h1>DO NOVE KOLEKCIJE</h1>
+
+</header>
+
+
+
+<section> <p class="inf">informacije</p><a class="opis" href="O nama.html">O nama</a> <a class="opis" href="kontakt.html">kontakt</a> <a class="opis" href="https://www.google.com/maps/@12.6997614,-61.3438414,17z?entry=ttu">lokacija</a></section>
+
+
+
+
+
+
+
+
+
+
+
+<main>
+<div> <a href="Crna majica.html">Pogledaj</a>
+    <img src="black.jpg" alt="los internet">  
+   <p> Crna majica pamuk                     
+    699 rsd </p></div>
+                                       
+    <div> <a href="Crvena majica.html">Pogledaj</a>
+        <img src="red.jpg" alt="los internet">  
+        <p>Crvena majica vuna                  
+        999 rsd</p> </div>
+
+        <div><a href="Plava majica.html">Pogledaj</a>
+            <img src="blu.jpg" alt="los internet">  
+           <p> Plava majica pamuk                     
+            799 rsd</p> </div>
+
+            <div><a href="Bela majica.html">Pogledaj</a>
+                <img src="white_t-shirt.jpg" alt="los internet">  
+            <p> Bela majica pamuk                     
+                599 rsd</p> </div> </main>
+
+
+            <footer>Stanje odece traje do 15. februara ili do isteka zaliha</footer>
+            <footer>Sva prava zadrzana "primer"©</footer>
+
+            
+
+            
+
+
+</body></html>
